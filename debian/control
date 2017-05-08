@@ -1,0 +1,15 @@
+Source: dotnet-corefx-2.0
+Priority: optional
+Maintainer: Jörg Sommer <joerg@alea.gnuu.de>
+Build-Depends: debhelper (>= 9), clang-3.9, cmake
+Standards-Version: 3.9.8
+Section: libs
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Git: https://anonscm.debian.org/collab-maint/dotnet-corefx-2.0.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/dotnet-corefx-2.0.git
+
+Package: dotnet-corefx-2.0
+Architecture: amd64 i386 arm armel
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>

@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+DOTNET_VERSION = 2.0.0-preview2
+ARCH = x64
+
+%:
+	dh $@
+
+override_dh_auto_build-arch:
+	src/Native/build-native.sh clang3.9 $(ARCH) release
+
+D=debian/dotnet-corefx-2.0/usr/lib/dotnet/shared/Microsoft.NETCore.App/$(DOTNET_VERSION)
+
+override_dh_auto_install:
+	mkdir -p $D
+	cp -v bin/Linux.$(ARCH).Release/native/* $D
+
+override_dh_auto_clean:
+	rm -rf bin
